@@ -82,11 +82,14 @@ const inputNome = document.getElementById("name");
 const inputRuolo = document.getElementById("role");
 const inputImmagine = document.getElementById("image");
 //implementazione: array immagini da usare in modo automatico con input vuoto
-arrImmagini = [
-    
+const arrImmaginiNew = [
+    'img/new-team-member-01.jpg',
+    'img/new-team-member-02.jpg',
+    'img/new-team-member-03.jpg',
+    'img/new-team-member-04.jpg'
 ]
 
-//dichiaro vqariabile button su cui inserire l'evento
+//dichiaro variabile button su cui inserire l'evento
 const buttonAddMember = document.getElementById("addMemberButton");
 let newObject;
 buttonAddMember.addEventListener("click", function(){
@@ -96,13 +99,19 @@ buttonAddMember.addEventListener("click", function(){
         ruolo: `${inputRuolo.value}`,
         foto: `${inputImmagine.value} `,
     }
-    if (inputImmagine.value = ""){
-
-    }
     console.log(inputImmagine)
+    if (inputImmagine.value = " "){
+        console.log("ok")
+        let i = Math.floor(Math.random() * arrImmaginiNew.length);
+        newObject.foto = arrImmaginiNew[i]
+        console.log(i)
+    }
+    
     team.push(newObject)
     console.log(newObject)
     console.log(team)
     generaCard()
 })
+
+
 
