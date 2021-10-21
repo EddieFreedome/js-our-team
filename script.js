@@ -33,7 +33,7 @@ const team = [
     {
         nome: "Angela Lopez",
         ruolo: "Social Media Manager",
-        foto: "img/angela-caroll-chief-editor.jpg",
+        foto: "img/angela-lopez-social-media-manager.jpg",
     },
     {
         nome: "Scott Estrada",
@@ -44,7 +44,8 @@ const team = [
         nome: "Barbara Ramos",
         ruolo: "Graphic Designer",
         foto: "img/barbara-ramos-graphic-designer.jpg",
-    }
+    },
+    
 ]
 
 const cardContainer = document.querySelector(".team-container")
@@ -73,27 +74,35 @@ function generaCard(){
     }
 }
 
-//dagli input, prendere i dati nome, ruolo e immagine
+//al click del pulsante, dagli input prendere i dati nome, ruolo e immagine
 // e creare un oggetto
-let inputNome
-let inputRuolo
-let inputImmagine
 
-
-
-//inserisco negli input i valori nome, ruolo, immagine
-//al click del pulsante addmember, viene generato l'oggetto e pushati dentro i dati presi dagli input
-//richiamo la funzione per generare la card con quell'oggetto e quei dati
-
-
-
-//creo oggetto
-const extraCard = {
+//rendo i valori delle variabili
+const inputNome = document.getElementById("name");
+const inputRuolo = document.getElementById("role");
+const inputImmagine = document.getElementById("image");
+//implementazione: array immagini da usare in modo automatico con input vuoto
+arrImmagini = [
     
-}
-//per ogni input prendere il suo valore 
-const inputNome = 
+]
 
-//pushare l'oggetto nell'array team
+//dichiaro vqariabile button su cui inserire l'evento
+const buttonAddMember = document.getElementById("addMemberButton");
+let newObject;
+buttonAddMember.addEventListener("click", function(){
+    //ali click creo un nuovo oggetto
+    newObject = {
+        nome: `${inputNome.value}`,
+        ruolo: `${inputRuolo.value}`,
+        foto: `${inputImmagine.value} `,
+    }
+    if (inputImmagine.value = ""){
 
-//invocare la funzione che genera le card con quell'oggetto
+    }
+    console.log(inputImmagine)
+    team.push(newObject)
+    console.log(newObject)
+    console.log(team)
+    generaCard()
+})
+
