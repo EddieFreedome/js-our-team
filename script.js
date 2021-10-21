@@ -21,21 +21,46 @@ const team = [
     }
     {
         nome: "Angela Lopez",
-        ruolo: "Social Media Managaer",
-        foto: "img/angela-caroll-chief-editor.jpg"
+        ruolo: "Social Media Manager",
+        foto: "img/angela-caroll-chief-editor.jpg",
     }
     {
         nome: "Scott Estrada",
         ruolo: "Developer",
-        foto: "img/scott-estrada-developer.jpg"
+        foto: "img/scott-estrada-developer.jpg",
     }
     {
         nome: "Barbara Ramos",
         ruolo: "Graphic Designer",
-        foto: "img/barbara-ramos-graphic-designer.jpg"
+        foto: "img/barbara-ramos-graphic-designer.jpg",
     }
 ]
 
+
+const cardContainer = document.getElementById("team-container")
+
+function generaCard(team, content){
+    //creo card
+    const card = document.createElement('div');
+    card.classList = 'team-card';
+
+    const content = ` 
+        <div class="team-card">
+            <div class="card-image">
+                <img
+                    src="${team.foto}"
+                    alt=""
+                />
+            </div>
+            <div class="card-text">
+                <h3>${team.nome}</h3>
+                <p>${team.ruolo}</p>
+            </div>
+        </div>
+    `;
+
+    cardContainer.innerHTML += content;
+}
 // - Prendendo come riferimento il layout di esempio presente 
 //nell’html, stampiamo tutte le card del nostro team.
 
