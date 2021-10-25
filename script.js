@@ -49,9 +49,9 @@ const team = [
 ]
 
 const cardContainer = document.querySelector(".team-container")
-cardContainer.innerHTML = ""
 generaCard()
 function generaCard(){
+    cardContainer.innerHTML = ""
     //creo card per ogni...
     for (i = 0; i < team.length; i++){
 
